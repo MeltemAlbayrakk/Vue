@@ -5,8 +5,17 @@ import App from './App.vue'
 import './index.css' 
 
 
+    // if (process.env.NODE_ENV === 'development') {
+    //     const { worker } = await import('./mocks/browser')
+    //     worker.start()
+    // }
+   
+ 
+  
+     
+ 
 
-const app = createApp(App)
 
-
-app.mount('#app')
+    createApp(App).mount('#app')
+  
+  

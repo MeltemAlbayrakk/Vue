@@ -2,8 +2,8 @@
     <div id="homepage">
     
     </div>
+   <Navbar></Navbar>
    
-    <Navbar></Navbar>
 <Sidebar></Sidebar>
  <Content></Content>
 </template>

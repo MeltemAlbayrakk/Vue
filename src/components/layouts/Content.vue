@@ -10,6 +10,13 @@
       </a>
           
 
+      <div id="popup-container" class="popup-container">
+  <div class="popup-content">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <p>Popup içeriği buraya gelecek</p>
+  </div>
+</div>
+
           <input class="mt-5 ml-20 h-10 w-22 rounded-full border-none bg-fade" type="text" placeholder="Search..." />
 
           
@@ -31,12 +38,12 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
           </svg>
 
-          <a class=" mt-5 ml-5" href="">
+         
+
+          </a> <a class=" mt-5 ml-5" href="">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10 text-redd">
             <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 0 1 3.878.512.75.75 0 1 1-.256 1.478l-.209-.035-1.005 13.07a3 3 0 0 1-2.991 2.77H8.084a3 3 0 0 1-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 0 1-.256-1.478A48.567 48.567 0 0 1 7.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 0 1 3.369 0c1.603.051 2.815 1.387 2.815 2.951Zm-6.136-1.452a51.196 51.196 0 0 1 3.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 0 0-6 0v-.113c0-.794.609-1.428 1.364-1.452Zm-.355 5.945a.75.75 0 1 0-1.5.058l.347 9a.75.75 0 1 0 1.499-.058l-.346-9Zm5.48.058a.75.75 0 1 0-1.498-.058l-.347 9a.75.75 0 0 0 1.5.058l.345-9Z" clip-rule="evenodd" />
           </svg>
-          </a>
-
           </a>
         </div>
 
@@ -49,7 +56,7 @@
             <table class=" table w-full text-md text-left rtl:text-right text-gray-500 dark:text-gray-400" style="margin-left: 80px;">
         <thead class="text-md text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
-                <th scope="col" class=" text-lg px-10 py-3">
+                <th scope="col" class=" px-10 py-3">
                    Name
                 </th>
                 <th scope="col" class="px-10 py-3">
@@ -216,9 +223,18 @@ export default{
     data() {
         return {
         
-     
+          popupVisible: false
         };
+    }, 
+    methods: {
+    openPopup() {
+      this.popupVisible = true;
     },
+    closePopup() {
+      this.popupVisible = false;
+    }
+  }
+
     
     
 };
@@ -240,6 +256,43 @@ export default{
 
 .max-w-screen-lg {
     max-width: 1024px; /* İstediğiniz genişliği burada belirtebilirsiniz */
+}
+.popup-container {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  max-width: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 </style>

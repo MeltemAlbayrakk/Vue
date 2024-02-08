@@ -7,6 +7,8 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@babel/core": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
     "@coreui/vue": "^4.10.2",
     "@headlessui/vue": "^1.7.18",
     "@heroicons/react": "^2.1.1",
@@ -25,6 +27,7 @@
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
+    "@babel/plugin-transform-private-methods": "^7.23.3",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.10",
@@ -45,7 +48,10 @@
   ],
   "msw": {
     "workerDirectory": [
-      "src\\assets"
+      "src\\assets",
+      "..\\..\\..\\..\\..\\src\\assets",
+      "..\\..\\..\\..\\..\\assets",
+      "assets"
     ]
   }
 }
